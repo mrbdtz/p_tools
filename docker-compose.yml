@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: gunicorn app.main:server --bind 0.0.0.0:5001
+    volumes:
+      - .:/app
+    network_mode: "host" 
